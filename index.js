@@ -6,7 +6,7 @@ const createError = require('http-errors');
 
 const { Config } = require('./src/config/index');
 const { Response } = require('./src/common/response');
-const { LoginAPI } = require('./src/auth/index');
+const { UserAPI } = require('./src/user/index');
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.get("/", (req,res) => {
     res.send("Pagina de inicio")
 })
 
-LoginAPI(app);
+UserAPI(app);
 
 function logErrors(err, req, res, next) {
     next(err);

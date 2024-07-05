@@ -9,16 +9,16 @@ class Query {
             const results = await connection.query(sql);
             return results;
         } catch (error) {
-            debug('Error executing SQL:', error);
+            // debug('Error executing SQL:', error);
             if (error.code && error.code === 'ER_DUP_ENTRY') {
                 return {
                     'code_error': 'datos repetidos',
-                    'details': error
+                    // 'details': error
                 };
             } else {
                 return {
                     'code_error': 'general_error',
-                    'details': error
+                    // 'details': error
                 };
             }
         }
