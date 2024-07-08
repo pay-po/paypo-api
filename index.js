@@ -7,6 +7,8 @@ const createError = require('http-errors');
 const { Config } = require('./src/config/index');
 const { Response } = require('./src/common/response');
 const { UserAPI } = require('./src/user/index');
+const { ReminderAPI } = require('./src/reminder/index');
+const { DetailReminderAPI } = require('./src/detail_reminder/index');
 
 const app = express();
 
@@ -21,6 +23,8 @@ app.get("/", (req,res) => {
 })
 
 UserAPI(app);
+ReminderAPI(app);
+DetailReminderAPI(app);
 
 function logErrors(err, req, res, next) {
     next(err);

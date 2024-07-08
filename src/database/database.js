@@ -20,7 +20,7 @@ class Conexion {
                 throw error; // Propagar el error para manejarlo externamente
             }
         } else {
-            debug('Reutilizando conexion');
+            // debug('Reutilizando conexion');
         }
         return this.connect;
     }

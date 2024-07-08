@@ -5,7 +5,6 @@ class Query {
     async execute(sql) {
         try {
             const connection = await Conexion.getConnection();
-            debug(sql)
             const results = await connection.query(sql);
             return results;
         } catch (error) {
